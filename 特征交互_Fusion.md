@@ -62,9 +62,16 @@ NOR应用了编码器-解码器变压器架构，其中包含细粒度的自注�
 ![image](https://github.com/NanGongNingYi/-/assets/61775768/f13d6c33-ac16-4a29-96a8-40e78962c419)  
 神经时尚推荐架构 (NOR) 的详细信息。 (a) 顶部和底部图像编码器从图像中提取视觉特征 Ft 和 Fb。 (b) 使用相互注意机制，我们将视觉特征转换为潜在表示vt和vb。然后匹配解码器预测匹配指示符rtb。 (c) 在每个时间戳 τ 处，生成解码器采用跨模态注意机制来生成单词 wτ 。  
 
-### EFRM
-
-
+### EFRM: Explainable Fashion Recommendation: A Semantic Attribute Region Guided Approach 2019
+EFRM还设计了语义提取网络（SEN）来提取局部特征，最后将两个特征与细粒度的注意力偏好融合。  
+大多数先前的时尚推荐模型都以全局内容表示来理解服装图像，缺乏对用户语义偏好的详细理解，这通常会导致推荐性能较差。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/9e99567d-d3eb-4394-a474-0a2b68ab9c0a)  
+传统的（a）全局视觉空间和我们的（b）语义属性视觉空间之间的区别。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/97c1c8f5-3390-45cb-a130-d688f0cff42e)
+SAERS包含两个主要组件，即语义提取网络（SEN）和细粒度偏好注意（FPA）。  
+具体来说，利用 SEN，我们首先获得语义特征空间中的时尚商品投影。接下来，我们设计 FPA 将用户投影到相同的语义特征空间中。  
+然后，我们在成对学习框架下共同学习全局视觉空间和语义属性视觉空间中的项目表示。  
+最后，通过属性偏好推断，我们可以生成可解释的推荐。  
 
 ### VECF
 
