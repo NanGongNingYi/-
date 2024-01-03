@@ -55,9 +55,12 @@ FOM 的架构。我们一次掩盖一件衣物。例如，我们在套装中遮�
 ![image](https://github.com/NanGongNingYi/-/assets/61775768/5a2a3781-d771-4e04-b2f2-66f4c04bc898)  
 POG的架构，是一个带有Per网络和Gen网络的编码器-解码器架构。套装物品是根据Per网络的用户偏好信号和Gen网络的兼容性信号逐步生成的。  
 
-### NOR
-
-
+### NOR: Explainable Outfit Recommendation with Joint Outfit Matching and Comment Generation 2019
+NOR应用了编码器-解码器变压器架构，其中包含细粒度的自注意力结构。它可以根据搭配信息生成相应的方案描述。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/88507f16-a831-43ee-be96-d71bcbf645ee)  
+所提出的神经套装推荐 (NOR) 架构的概述。 NOR包含三个部分：（1）顶部和底部图像编码器（对应图（a）），（2）匹配解码器（对应图（b）），以及（3）生成解码器（对应于图(c))。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/f13d6c33-ac16-4a29-96a8-40e78962c419)  
+神经时尚推荐架构 (NOR) 的详细信息。 (a) 顶部和底部图像编码器从图像中提取视觉特征 Ft 和 Fb。 (b) 使用相互注意机制，我们将视觉特征转换为潜在表示vt和vb。然后匹配解码器预测匹配指示符rtb。 (c) 在每个时间戳 τ 处，生成解码器采用跨模态注意机制来生成单词 wτ 。  
 
 ### EFRM
 
