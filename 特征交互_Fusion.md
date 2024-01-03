@@ -19,10 +19,17 @@ MCPTR建议并行合并项目和用户信息。
 最后，采用基于反馈矩阵R的二元交叉熵损失函数来捕获目标用户u与其对应的目标项目i的潜在相关性。**在微调过程中**，现有的推荐模型利用预先训练的用户/项目嵌入作为初始化，并仅基于反馈矩阵 R 微调这些嵌入。  
 ![image](https://github.com/NanGongNingYi/-/assets/61775768/d1deaaab-da29-486e-8ab0-8b3e60508da9)
 
-
-
 ### 注：CMBF、MML、MCPTR、HCGCN引入交叉注意力机制来分别共同学习图像和文本模态的语义信息。  
-### CMBF:
+### CMBF: Cross-Modal-Based Fusion Recommendation Algorithm 2021
+CMBF引入交叉注意力机制来分别共同学习图像和文本模态的语义信息，然后将它们连接起来。 
+现有的多模态推荐算法都是提取单一模态的特征并简单拼接不同模态的特征来预测推荐结果。这种融合方法不能完全挖掘多模态特征的相关性，丢失了不同模态之间的关系，影响了预测结果。  
+在本文中，我们提出了一种基于跨模态的融合推荐算法（CMBF），该算法可以捕获单模态特征和跨模态特征。我们的算法使用一种新颖的跨模态融合方法来完全融合多模态特征并学习不同模态之间的交叉信息。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/7fbfe257-1887-42de-bdd8-26c9d011a1d3)
+基于CMBF的拟议框架概述。图像/文本特征学习层和跨模态融合层的详细信息分别如图2和图3所示。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/8507b835-fd00-4f0c-b1c4-63570b8a37d6)
+特征学习层的图示。(a)代表图像特征学习层，(b)代表文本特征学习层。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/8e74386a-66c5-4ff9-924c-b3d875b47b5e)
+跨模式融合层的图示。  
 
 ### MML: 
 
