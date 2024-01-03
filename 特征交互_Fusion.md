@@ -43,9 +43,35 @@ MML基于id信息设计了一个注意力层，并辅以视觉和文本信息。
 MCPTR每个模态占据相同的位置，自注意力机制决定融合权重。相比之下，HCGCN更关注项目本身的视觉和文本信息。  
 ![image](https://github.com/NanGongNingYi/-/assets/61775768/f0c38f0c-68f9-42ec-8857-114a8546f31c)
 
+## 2.1 细粒度注意力。
+多模态数据包含全局和细粒度特征，例如录音的音调或一件衣服上的图案。  
+由于粗粒度融合通常是侵入性和不可逆的，它会损坏原始模态的信息并降低推荐性能。  
+细粒度融合，选择性地融合不同模态之间的细粒度特征信息  
+### 注：细粒度融合在时尚推荐场景中意义重大。
+### POG: Personalized Outfit Generation for Fashion Recommendation at Alibaba iFashion 2019
+POG是一个基于Transformer架构的大型在线服装推荐系统。在编码器中，通过多层注意力挖掘时尚图像中属于搭配方案的深层特征，不断实现细粒度的集成。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/88a61273-e778-4f1c-9412-25a9b1aa227b)  
+FOM 的架构。我们一次掩盖一件衣物。例如，我们在套装中遮盖一条牛仔裤。模型学会从候选池中选择正确的牛仔裤，以完成对套装中其它衣物的搭配。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/5a2a3781-d771-4e04-b2f2-66f4c04bc898)  
+POG的架构，是一个带有Per网络和Gen网络的编码器-解码器架构。套装物品是根据Per网络的用户偏好信号和Gen网络的兼容性信号逐步生成的。  
+
+### NOR
 
 
 
+### EFRM
+
+
+
+### VECF
+
+
+
+### UVCAN
+
+
+
+### MM-Rec
 
 
 
