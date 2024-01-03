@@ -85,15 +85,55 @@ UVCAN像VECF一样对视频截图进行图像分割，并通过注意力机制�
 
 ### MM-Rec: Multimodal News Recommendation 2022
 MM-Rec首先通过目标检测算法Mask-RCNN从新闻图像中提取感兴趣区域，然后利用共同注意力将POI与新闻内容融合。  
-![image](https://github.com/NanGongNingYi/-/assets/61775768/add885af-bd50-4e10-9657-31bb37d3db77)
+![image](https://github.com/NanGongNingYi/-/assets/61775768/add885af-bd50-4e10-9657-31bb37d3db77)  
 在论文中，我们提出了一种名为 MM-Rec 的多模态新闻推荐方法，该方法利用文本和视觉新闻信息进行新闻推荐。  
 在我们的方法中，我们首先通过预训练的 Mask R-CNN 模型提取新闻图像的兴趣区域 (ROI) 以进行对象检测。  
 然后，我们使用预先训练的视觉语言模型对新闻文本和新闻图像 ROI 进行编码，并通过共同注意 Transformer 对其固有的跨模态相关性进行建模，以学习准确的多模态新闻表示。   
 此外，我们还提出了一种跨模态候选新闻感知注意力网络，通过评估候选新闻与点击新闻之间的跨模态相关性，选择相关的点击新闻进行用户建模，这有助于模拟用户对候选新闻的特定兴趣。
-![image](https://github.com/NanGongNingYi/-/assets/61775768/2964132e-7612-4b3a-805a-8a1ff669d0ca)
+![image](https://github.com/NanGongNingYi/-/assets/61775768/2964132e-7612-4b3a-805a-8a1ff669d0ca)  
+
+### 注：有些模型设计了独特的内部结构，以实现更好的细粒度融合。   
+### MKGformer: Hybrid Transformer with Multi-level Fusion for Multimodal Knowledge Graph Completion 2023
+**MKGformer通过共享一些QKV参数和相关的感知融合模块来实现细粒度的融合。**  
+大多数多模态知识图谱MKG远未完成，不同的任务和模式需要改变模型架构，并且并非所有图像/对象都与文本输入相关，这阻碍了对不同现实场景的适用性。  
+我们提出了一种具有多级融合的混合变压器来解决这些问题。具体来说，我们利用具有统一输入输出的混合变压器架构来完成各种多模态知识图任务。此外，我们提出了多级融合，它通过粗粒度前缀引导交互和细粒度相关感知融合模块集成了视觉和文本表示。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/f1b35f90-2d48-48ae-902d-da25d1e9e004)
+MKGformer，一种用于统一多模态 KGC 的混合 Transformer，它实现了跨视觉 Transformer 和文本 Transformer 的最后几层的实体多模态特征的多级融合建模，即 M-编码器。  
+之前的工作表明预训练模型（PLM）可以激活与 Transformer Encoder 中的自注意力层和前馈网络（FFN）层的输入相关的知识。受此启发，我们将视觉信息视为补充知识，并在 Transformer 架构中提出多级融合。  
+具体来说，我们首先在 M-Encoder 的自注意力部分提出一个粗粒度的前缀引导交互模块，以预先减少下一步的模态异质性。其次，M-Encoder 的 FFN 部分提出了相关感知融合模块，以获得细粒度的图像文本表示，从而减轻不相关图像/对象的错误敏感性。特别是，除了多模态链接预测之外，MKGformer 可以通过对特定任务头的简单修改来更广泛地应用于 MRE 和 MNER 任务，如图（a）所示。  
+
+### MGAT
 
 
 
+
+### MARIO
+
+
+
+
+## 2.3 联合注意力。
+组合融合结构，细粒度特征的融合也能保留全局信息的聚合。  
+### NOVA
+
+
+
+
+
+### NRPA
+
+
+
+
+
+
+### VLSNR
+
+
+
+
+
+### MARank
 
 
 
