@@ -80,14 +80,17 @@ SAERS包含两个主要组件，即语义提取网络（SEN）和细粒度偏好
 ![image](https://github.com/NanGongNingYi/-/assets/61775768/db1995b2-72ad-46dc-98ce-7637142dd01c)  
 所提出的 VECF 模型。红线表示为时尚形象建模设计的注意力机制。蓝线突出显示了用户评论的建模。  
 
-### UVCAN
+### UVCAN: User-Video Co-Attention Network for Personalized Micro-video Recommendation
+UVCAN像VECF一样对视频截图进行图像分割，并通过注意力机制分别将图像块与id信息和文本信息融合。  
 
-
-
-### MM-Rec
-
-
-
+### MM-Rec: Multimodal News Recommendation 2022
+MM-Rec首先通过目标检测算法Mask-RCNN从新闻图像中提取感兴趣区域，然后利用共同注意力将POI与新闻内容融合。  
+![image](https://github.com/NanGongNingYi/-/assets/61775768/add885af-bd50-4e10-9657-31bb37d3db77)
+在论文中，我们提出了一种名为 MM-Rec 的多模态新闻推荐方法，该方法利用文本和视觉新闻信息进行新闻推荐。  
+在我们的方法中，我们首先通过预训练的 Mask R-CNN 模型提取新闻图像的兴趣区域 (ROI) 以进行对象检测。  
+然后，我们使用预先训练的视觉语言模型对新闻文本和新闻图像 ROI 进行编码，并通过共同注意 Transformer 对其固有的跨模态相关性进行建模，以学习准确的多模态新闻表示。   
+此外，我们还提出了一种跨模态候选新闻感知注意力网络，通过评估候选新闻与点击新闻之间的跨模态相关性，选择相关的点击新闻进行用户建模，这有助于模拟用户对候选新闻的特定兴趣。
+![image](https://github.com/NanGongNingYi/-/assets/61775768/2964132e-7612-4b3a-805a-8a1ff669d0ca)
 
 
 
