@@ -155,31 +155,21 @@ MARank设计了一个多阶注意力层，它将注意力和Resnet结合成一�
 (a) 所提出模型 MARank 的总体架构。 pu 和 E 分别表示检索到的用户嵌入和 Su t−1,n 中先前项目的嵌入。  
 (b) 多阶注意力网络的图示。由于用于编码用户和项目的残差网络共享相同的架构，我们仅详细阐述 ResN etI 的具体结构。
 
+### 2.4 其他融合方法。
+一些简单的方法，包括平均池化、连接操作和门控机制。它们很少单独出现，并且经常与图和注意力机制结合使用。现有工作表明，简单的交互如果使用得当，不会损害推荐效果，并且可以降低模型的复杂度。  
+一些早期模型采用RNN和LSTM等结构，试图通过多模态信息对用户时间偏好进行建模。然而，随着注意力机制和CNN等深度学习技术的发展，这些年它们的使用已经越来越少。一些模型通过线性和非线性层融合多模态特征。  
 
+### Interest-Related Item Similarity Model Based on Multimodal Data for Top-N Recommendation 2019
+吕等人在该处设置线性层以融合文本和视觉特征。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/1b7072e2-52fb-4f00-acc9-9ef9d3d3a58c)  
+在该框架中，利用项目潜在因子进行相似度计算，并利用多模态特征通过IRN计算兴趣相关性，从而综合用户对目标项目的偏好预测概率。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/7708f78d-a4c9-46fd-b055-5f48af3bfb93)  
+使用图像特征计算项目之间的兴趣相关性。以物品ID作为输入，输出是两者之间的兴趣相关性。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/49f65364-9615-444b-a9b5-913092b779e6)  
+使用多模态特征计算项目之间的兴趣相关性。以物品ID作为输入，输出是两者之间的兴趣相关性。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/3342e54c-a2fb-4adb-8550-29568867c2ff)  
+视觉特征和文本特征之间的知识共享单元。  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### MMT-Net: Transfer learning via contextual invariants for one-to-many cross-domain recommendation. 2020
+人工标记餐厅数据的三个上下文不变量，并通过三层MLP网络进行交互。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/2c0df91f-a5c5-488d-8331-0e83a223f4e7)  
