@@ -149,8 +149,19 @@ VLSNR：视觉语言协调时间序列感知新闻推荐，它利用融合模块
 在我们的方法中，我们**将图像和标题传输到 CLIP 编码器**以学习新闻的表示。这使得文本和图像的语义能够很好地映射在同一特征空间中。  
 然后，我们构建了一系列注意力层，这有助于检测图像和文本之间更深层的交互。此外，我们提出了一个注意力 GRU 网络来学习用户的时间兴趣。  
 
+### Multi-Order Attentive Ranking Model for Sequential Recommendation 2019
+MARank设计了一个多阶注意力层，它将注意力和Resnet结合成一个统一的结构来融合信息。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/5d0a1fb2-3d84-457f-a366-eb24b175e651)  
+(a) 所提出模型 MARank 的总体架构。 pu 和 E 分别表示检索到的用户嵌入和 Su t−1,n 中先前项目的嵌入。  
+(b) 多阶注意力网络的图示。由于用于编码用户和项目的残差网络共享相同的架构，我们仅详细阐述 ResN etI 的具体结构。
 
-### MARank
+
+
+
+
+
+
+
 
 
 
