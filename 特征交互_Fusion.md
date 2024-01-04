@@ -101,15 +101,22 @@ MKGformer，一种用于统一多模态 KGC 的混合 Transformer，它实现了
 之前的工作表明预训练模型（PLM）可以激活与 Transformer Encoder 中的自注意力层和前馈网络（FFN）层的输入相关的知识。受此启发，我们将视觉信息视为补充知识，并在 Transformer 架构中提出多级融合。  
 具体来说，我们首先在 M-Encoder 的自注意力部分提出一个粗粒度的前缀引导交互模块，以预先减少下一步的模态异质性。其次，M-Encoder 的 FFN 部分提出了相关感知融合模块，以获得细粒度的图像文本表示，从而减轻不相关图像/对象的错误敏感性。特别是，除了多模态链接预测之外，MKGformer 可以通过对特定任务头的简单修改来更广泛地应用于 MRE 和 MNER 任务，如图（a）所示。  
 
-### MGAT
+### MGAT: Multimodal Graph Attention Network for Recommendation
+MGAT使用门控注意力机制来关注用户的本地偏好。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/24856adb-af7d-448f-992d-05862065eaff)  
 
-
-
-
-### MARIO
-
-
-
+### MARIO: Modality-Aware Attention and Modality-Preserving Decoders for Multimedia Recommendation 2022
+MARIO通过考虑每种方式对每次交互的个体影响来预测用户偏好。因此模型设计了一种模态感知注意力机制来识别各种模态对每次交互的影响，并对不同模态进行点乘。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/6e90ae83-0d2d-4a22-97a2-cba7919eaa0f)  
+项目对在（a）视觉模态、（b）文本模态和（c）交互模态方面的相似性。每个子图中的放大部分显示了相同项目对之间的相似性。结果表明，即使对于相同的项目对，它们的视觉模态、文本模态和交互模态的相似性也有很大差异。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/3f065f52-72b1-4e7a-b93b-432a7dcfb757)  
+预训练项目嵌入（从每种模态获得）的相似性与最终项目嵌入（通过 MMGCN 和 LATTICE 获得）的相似性之间差异的密度函数。预训练嵌入中的模态特定属性未准确保留在最终嵌入中。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/2b60c2ef-cc22-4a5d-a972-2c75ac9b1872)  
+MARIO概述，由三个组件组成：（C1）基于交互和多模态信息的编码器； (C2) 基于注意力网络的预测器； (C3) 用于模态保存的解码器。  
+首先，MARIO获得每个ui的嵌入ui∈Rd和每个vj的多重模态嵌入 ̄ vVj , ̄ vTj, ̄ vINj ∈ Rd 分别对应视觉、文本和交互模态（图 4- （A））。  
+给定 ui 、 ̄ vVj 、 ̄ vTj 和 ̄ vINj ，MARIO 使用注意力网络来推断每个模态 m 对 ui 和 vj 之间的每次交互的影响 ̄ amij 。然后，MARIO 根据模态特定的影响获得 vj 相对于 ui 的个性化嵌入，我们用 vij ∈ Rd 表示（图 4-(b)）。  
+基于 ui 和 vij ，MARIO 预测每个用户 ui 对每个项目 vj 的偏好 ˆrij 。同时，MARIO 使用解码器在其个性化嵌入 vij 中保留每个 vj 的模态特定属性（图 4-(c)）。  
+最后，MARIO 更新 ui 、 ̄ vVj 、 ̄ v Tj 和 ̄ vINj ，旨在共同最小化两个损失（图 4-(d)）：（1）贝叶斯个性化排名（BPR）损失，用于保留ui 和 vj 的交互信息以及（2）模态保留（MP）损失，用于保留 vj 相对于视觉和文本模态的模态特定属性。  
 
 ## 2.3 联合注意力。
 组合融合结构，细粒度特征的融合也能保留全局信息的聚合。  
