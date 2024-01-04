@@ -131,12 +131,13 @@ BERT4Rec.项目 ID 和位置分别编码为向量，然后加在一起作为集�
 ![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/36032905-dcec-4560-8a8d-ab020ebb7952)  
 NOVA-BERT。每个 NOVA 层都有两个输入：项目表示和辅助信息。  
 
-### NRPA
-
-
-
-
-
+### NRPA: Neural Recommendation with Personalized Attention 2019
+NRPA提供了一个个性化的注意力网络，它考虑了用户评论所代表的用户偏好。它利用个性化的词级注意力为每个用户/项目选择评论中更重要的词，并依次通过细粒度和粗粒度的融合传递评论信息注意力层。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/d848e879-6710-4bfe-a8fa-33f316342fa4)  
+NRPA 包含两个组件，即，用于学习评论表示的评论编码器，用于从评论中学习用户/项目表示的用户/项目编码器。  
+在评论编码器中，我们利用卷积神经网络（CNN）从单词中提取评论的语义特征，然后使用个性化的单词级注意力来为每个用户/项目选择评论中更重要的单词。  
+在用户/项目编码器中，我们应用个性化评论级别的注意力，通过根据权重聚合所有评论表示来学习用户/项目表示。此外，用户/项目的单词和评论级注意力向量由两个多层神经网络生成，并以用户/项目 ID 嵌入作为输入。这两个注意力向量可以看作是分层视图（即单词和评论级别）下每个用户和项目的指标。  
+最后，我们将用户和目标项目的表示结合起来，并将它们输入因子分解机层，以预测用户对该项目投票的评分。  
 
 ### VLSNR
 
