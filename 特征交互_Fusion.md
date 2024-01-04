@@ -101,7 +101,7 @@ MKGformer，一种用于统一多模态 KGC 的混合 Transformer，它实现了
 之前的工作表明预训练模型（PLM）可以激活与 Transformer Encoder 中的自注意力层和前馈网络（FFN）层的输入相关的知识。受此启发，我们将视觉信息视为补充知识，并在 Transformer 架构中提出多级融合。  
 具体来说，我们首先在 M-Encoder 的自注意力部分提出一个粗粒度的前缀引导交互模块，以预先减少下一步的模态异质性。其次，M-Encoder 的 FFN 部分提出了相关感知融合模块，以获得细粒度的图像文本表示，从而减轻不相关图像/对象的错误敏感性。特别是，除了多模态链接预测之外，MKGformer 可以通过对特定任务头的简单修改来更广泛地应用于 MRE 和 MNER 任务，如图（a）所示。  
 
-### MGAT: Multimodal Graph Attention Network for Recommendation
+### MGAT: Multimodal Graph Attention Network for Recommendation 2020
 MGAT使用门控注意力机制来关注用户的本地偏好。  
 ![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/24856adb-af7d-448f-992d-05862065eaff)  
 
@@ -119,12 +119,17 @@ MARIO概述，由三个组件组成：（C1）基于交互和多模态信息的�
 最后，MARIO 更新 ui 、 ̄ vVj 、 ̄ v Tj 和 ̄ vINj ，旨在共同最小化两个损失（图 4-(d)）：（1）贝叶斯个性化排名（BPR）损失，用于保留ui 和 vj 的交互信息以及（2）模态保留（MP）损失，用于保留 vj 相对于视觉和文本模态的模态特定属性。  
 
 ## 2.3 联合注意力。
-组合融合结构，细粒度特征的融合也能保留全局信息的聚合。  
-### NOVA
-
-
-
-
+基于细粒度融合，一些模型设计了组合融合结构，希望细粒度特征的融合也能保留全局信息的聚合。  
+### Non-invasive Self-attention for Side Information Fusion in Sequential Recommendation 2021
+NOVA 将辅助信息引入顺序推荐。它指出，直接将不同的模态特征与普通注意力融合通常效果很小，甚至会降低性能。因此，它提出了一种具有两个分支的非侵入式注意力机制，将id嵌入到一个单独的分支中，以在融合过程中保留交互信息。   
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/7608506e-7bab-4144-9323-943a8c8fe1fa)  
+侵入性和非侵入性方法的图示。侵入式方法不可逆地融合各种信息，然后将它们输入顺序模型。对于非侵入式方法，边信息仅参与注意力矩阵计算，而项目信息保存在独立的向量空间中。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/d74d6a15-81d6-4293-a6ac-930f14bed23e)  
+BERT4Rec.项目 ID 和位置分别编码为向量，然后加在一起作为集成的项目表示。在训练期间，项目 ID 被随机屏蔽（显示为 [M]）以便模型恢复。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/d6681e9c-3919-4001-8861-1c4093a46a18)  
+用于特征融合的侵入式和非侵入式自注意力方式的比较。两者都通过融合函数融合项目相关和行为相关的辅助信息，但 NOVA 仅在 Query & Key 中融合它们。  
+![image](https://github.com/NanGongNingYi/Multimodal-Recommendation-Papers/assets/61775768/36032905-dcec-4560-8a8d-ab020ebb7952)  
+NOVA-BERT。每个 NOVA 层都有两个输入：项目表示和辅助信息。  
 
 ### NRPA
 
