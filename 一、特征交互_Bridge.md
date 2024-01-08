@@ -7,12 +7,12 @@
 **大多数早期作品只是简单地使用多模态内容来增强项目表达，但它们往往忽略了用户和项目之间的交互。**  
 ## 1.1 用户-相互二部图  
 利用用户和物品之间的信息交换，可以捕获用户对不同模式的偏好。因此，一些模型利用了用户-项目图。  
-### MMGCN: Multi-modal Graph Convolution Network for Personalized Recommendation of Micro-video
+### MMGCN: Multi-modal Graph Convolution Network for Personalized Recommendation of Micro-video 2019
 
 MMGCN为每种模态建立了一个用户-项目二分图。对于每个节点，可以利用相邻节点的拓扑结构和项目的模态信息来更新该节点的特征表达。  
 <img src="https://github.com/NanGongNingYi/-/assets/61775768/bcb8cce8-f1a3-408d-a856-4c8de5bfbc22" width="70%">
 
-### GRCN: Graph-Refined Convolutional Network for Multimedia Recommendation with Implicit Feedback
+### GRCN: Graph-Refined Convolutional Network for Multimedia Recommendation with Implicit Feedback 2021
 
 通过在模型训练期间自适应修改图的结构来删除不正确的交互数据（用户点击了不感兴趣的视频）来提供建议。  
 <img src="https://github.com/NanGongNingYi/-/assets/61775768/7eb2fd2a-5ce8-4014-ba48-5853e246ffb6" width="50%">  
@@ -21,7 +21,7 @@ MMGCN为每种模态建立了一个用户-项目二分图。对于每个节点�
 
 ### 注：MMGCN、GRCN这些方法仍然存在局限性，因为使用统一的方式来融合不同模态的用户偏好，忽略了用户对不同模态的偏好程度的差异。换句话说，给每种模态赋予相同的权重可能会导致模型的性能不佳。为了解决这个问题，DualGNN、MMGCL、MGAT学习模态之间的相关性
 
-### DualGNN: Dual Graph Neural Network for Multimedia Recommendation
+### DualGNN: Dual Graph Neural Network for Multimedia Recommendation 2021
 DualGNN利用用户之间的相关性，基于二分图和用户共现图来学习用户偏好。  
 1）单模态表示学习模块，该模块对每种模态的用户微视频图执行图操作，以捕获不同模态的单模态用户偏好；2）多模态表示学习模块来显式建模用户对不同模态的注意力，并归纳学习多模态用户偏好。3）预测模块来对用户的潜在微视频进行排名。  
 <img src="https://github.com/NanGongNingYi/-/assets/61775768/3c78c230-b4ad-418f-95a6-a8a6ddda709b" width="50%">  
@@ -29,11 +29,11 @@ DualGNN利用用户之间的相关性，基于二分图和用户共现图来学�
 我们提出的 DualGNN 的总体框架。它由单模态表示学习模块和多模态表示学习模块组成，单模态表示学习模块捕获每个模态用户微视频二部图上的单模态用户偏好，多模态表示学习模块显式建模用户对不同模态的品味并归纳学习多模态用户偏好，预测模块估计用户对目标微视频的偏好。  
 **\* DualGNN在MMGCN基础上，多了层对用户多模态表示的学习**  
 
-### MMGCL: Multi-modal Graph Contrastive Learning for Micro-video Recommendation
+### MMGCL: Multi-modal Graph Contrastive Learning for Micro-video Recommendation 2022
 MMGCL设计了一种新的多模态图对比学习方法来解决这个问题。 MMGCL 使用模态边缘损失和模态掩蔽来生成用户-项目图，并引入一种新颖的负采样技术来学习模态之间的相关性。  
 <img src="https://github.com/NanGongNingYi/-/assets/61775768/2c4b5468-4038-4852-8e66-45cd8d0055e0" width="70%">
 
-### MGAT: Multimodal Graph Attention Network for Recommendation
+### MGAT: Multimodal Graph Attention Network for Recommendation 2020
 MGAT引入了基于MMGCN的注意力机制，有利于自适应地捕获用户对不同模态的偏好。此外，MGAT利用门控注意力机制来判断用户对不同模态的偏好，可以捕获隐藏在用户行为中的相对复杂的交互模式。
 <img src="https://github.com/NanGongNingYi/-/assets/61775768/82c7eb4e-50e4-4947-8747-aea9d40370e3" width="90%">  
 1）嵌入层，初始化用户和项目的ID嵌入；2）在单模态交互图上嵌入传播层，执行消息传递机制来捕获用户对各个模态的偏好；3）跨多模态交互图的门控注意力聚合，它利用与其他模态的相关性来学习每个邻居的权重以指导传播；4)预测层，根据最终表示估计交互的可能性。  
